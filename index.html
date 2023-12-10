@@ -9,6 +9,7 @@
          <meta http-equiv=Content-Type content="text/html; charset=utf-8"> 
          <meta name=Generator content="Microsoft Word 15 (filtered)"> 
          <link rel="stylesheet" href="css/bootstrap.css"> 
+         <script src="https://unpkg.com/compromise/compromise.js"></script>
          <link rel="script" href="js/jquery-3.7.1.js">
          <style> 
                 /* Style Definitions */
@@ -138,23 +139,22 @@
                          <li class="nav-item" role="presentation"> 
                                  <button class="nav-link active" id="CD-tab" data-bs-toggle="tab"
                                         data-bs-target="#CD" type="button" role="tab" aria-controls="CD"
-                                        aria-selected="true"> Chương và điều luật </button> 
+                                        aria-selected="true"> Chương </button> 
                          </li> 
                          <li class="nav-item" role="presentation"> 
                                  <button class="nav-link" id="KN-tab" data-bs-toggle="tab" data-bs-target="#KN"
                                         type="button" role="tab" aria-controls="KN"
-                                        aria-selected="false"> Khái niệm và dạng luật </button> 
+                                        aria-selected="false"> Dạng luật </button> 
                          </li> 
                          <li class="nav-item" role="presentation"> 
                                  <button class="nav-link" id="CH-tab" data-bs-toggle="tab" data-bs-target="#CH"
                                         type="button" role="tab" aria-controls="CH"
-                                        aria-selected="false"> Câu hỏi thường gặp </button> 
+                                        aria-selected="false"> Câu hỏi </button> 
                          </li> 
                  </ul> 
                  <div class="tab-content" id="myTabContent"> 
                          <div class="tab-pane fade show active overflow-auto" id="CD" role="tabpanel" aria-labelledby="CD-tab" > 
-                                 <div id="KhoiC" class="ms-3 mt-3 col-10"> 
-                                        <div class="col-6 d-inline-block m-2">
+                                 <div id="KhoiC" class="ms-3 mt-3"> 
                                          <li class="1">  <a href="#chuong_1">  Chương 1  <h6>   Quy định chung     </h6>  </a>  </li> 
                                          <li class="1">  <a href="#chuong_2">  Chương 2  <h6>   Quyền và trách nhiệm của nhà nước đối với đất đai    </h6>  </a>   </li>                                         
                                          <li class="1">  <a href="#chuong_3">  Chương 3  <h6>   Địa giới hành chính và điều tra cơ bản về đất đai     </h6>  </a>   </li> 
@@ -162,8 +162,6 @@
                                          <li class="1">  <a href="#chuong_5">  Chương 5  <h6>   Giao đất, cho thuê đất, chuyển mục đích sử dụng đất    </h6>  </a>   </li> 
                                          <li class="1">  <a href="#chuong_6">  Chương 6  <h6>   Thu hồi đất, trưng dụng đất, bồi thường, hỗ trợ, tái định cư     </h6>  </a>  </li> 
                                          <li class="1">  <a href="#chuong_7">  Chương 7  <h6>   Đăng kí đất đai, cấp giấy chứng nhận quyền sử dụng đất, quyền sỡ hữu nhà ở và tài sản khác gắn liền với đất     </h6>  </a>  </li>    
-                                        </div>
-                                        <div class="col-5 d-inline-block m-2"> 
                                          <li class="1">  <a href="#chuong_8">  Chương 8  <h6>   Tài chính về đất đai, giá đất và đấu giá quyền sử dụng đất     </h6>  </a>  </li> 
                                          <li class="1">  <a href="#chuong_9">  Chương 9  <h6>   Hệ thống thông tin đất đai và cơ sỡ dữ liệu đất đai   </h6>  </a>  </li> 
                                          <li class="1">  <a href="#chuong_10">  Chương 10  <h6>   Chế độ sử dụng các loại đất     </h6>  </a>  </li> 
@@ -171,11 +169,24 @@
                                          <li class="1">  <a href="#chuong_12">  Chương 12  <h6>   Thủ tục hành chính về đất đai    </h6>  </a>  </li> 
                                          <li class="1">  <a href="#chuong_13">  Chương 13  <h6>   Giám sát, thanh tra, giải quyết tranh chấp, khiếu nại, tố cáo và xử lý vi phạm pháp luật về đất đai    </h6>  </a>  </li> 
                                          <li class="1">  <a href="#chuong_14">  Chương 14  <h6>   Điều khoản thi hành    </h6>  </a>  </li> 
-                                 </div>
-                                </div> 
-                         </div> 
-                 <div class="tab-pane fade" id="KN" role="tabpanel" aria-labelledby="KN-tab"> Làm dùm rồi đem nội dung vô đây dùm đi nhóm oi </div>  
-                 <div class="tab-pane fade" id="CH" role="tabpanel" aria-labelledby="CH-tab"> Làm dùm rồi đem nội dung vô đây dùm đi nhóm oi </div> 
+                                </div>
+
+                        </div> 
+                 <div class="tab-pane fade" id="KN" role="tabpanel" aria-labelledby="KN-tab">
+                        <div class="ms-3 mt-3"> 
+                                <li > Chương 1 <a href="#dieu_1" class="font-monospace"> <br>  Điều 1: Phạm vi điều chỉnh </a></li>
+
+
+
+
+
+
+
+
+                        </div>
+
+                 </div>  
+                 <div class="tab-pane fade" id="CH" role="tabpanel" aria-labelledby="CH-tab"> </div> 
                  </div> 
 
          </ul> 
@@ -4037,7 +4048,8 @@
                         "Tư vấn pháp lý về đất đai",
                         "Thủ tục chuyển nhượng đất",
                         "Đồng sở hữu đất đai",
-                        // Thêm các keyphrase khác liên quan đến lĩnh vực luật đất đai
+
+
                 ];
 
                 // getting all required elements
@@ -4053,8 +4065,8 @@
                         let emptyArray = [];
                         emptyArray = suggestions.filter((data) => {
                         // Tìm kiếm theo biểu thức chính quy cho tiếng Việt có dấu
-                        const regex = new RegExp("^" + userData, "i");
-                        return regex.test(data);
+                                const regex = new RegExp("^" + userData, "i");
+                                return regex.test(data);
                         });
                         if (userData) {
                         emptyArray = suggestions.filter((data) => {
