@@ -3,7 +3,7 @@
 
  <head> 
         <title>Luật Đất Đai 2013</title>
-        <meta name="description" content="Khám phá chi tiết về luật đất đai, quyền sử dụng đất, chuyển nhượng quyền đất, và các quy định khác liên quan đến lĩnh vực này. Hỗ trợ thông tin pháp lý về đất đai cho cộng đồng và doanh nghiệp.">
+        <meta name="description" content="Khám phá chi tiết về luật đất đai, quyền sử dụng đất, chuyển nhượng quyền đất, và các quy định khác liên quan đến lĩnh vực này.">
         <link rel="icon" type="image/x-icon" href="L.jpg">
 
          <meta http-equiv=Content-Type content="text/html; charset=utf-8"> 
@@ -47,9 +47,18 @@
                         color: darkblue;
                         padding: 5px;
                 }
+
+                .card{
+                        margin: 10px;
+                }
+                .card-title{
+                        line-height: 1.6;
+                }
+
                 li{
                         list-style-type: none;
-                        margin: 0 0 10px 0;
+                        margin: 0 0 5px 0;
+                        margin-left: 10px;
                         color: black;
                         padding: 5px;
                 }
@@ -104,16 +113,14 @@
                                 font-size: 5px;
                         }
                 }
-                span[class='chuthich']:not(:hover){
-                        opacity: 0;
-                }
+
          </style> 
  </head> 
 
  <body lang=EN-US style='word-wrap:break-word'> 
 
 
-         <div class="card bg-light-subtle" style="height: 100px; border: none; border-radius: 0;"> 
+         <div class="card bg-light-subtle m-0 p-1" style="height: 100px; border: none; border-radius: 0;"> 
                  <h3>  Văn bản pháp luật: Luật đất đai 2013  </h3> 
          </div> 
 
@@ -122,8 +129,11 @@
                         <a href="" target="_blank" hidden></a>
                         <div class="d-flex mb-4">
                         <input class="form-control me-2" type="text" placeholder="Nhập một từ hoặc một cụm từ để tìm kiếm" aria-label="Search" id="search-input">
-
-                        <button class="btn btn-outline-success" onclick="search()" type="button" style="width: 150px;"> Tìm kiếm </button>
+                        <select id="selectOption" name="selectOption" style="margin-right: 10px; border-radius: 10px;">
+                                <option value="option1"> Cụm từ hoặc từ </option>
+                                <option value="option2"> Câu hỏi đơn giản </option>
+                        </select>
+                        <button class="btn btn-outline-success" onclick="selectND()" type="button" style="width: 150px;"> Tìm kiếm </button>
                         </div>
                         <div class="autocom-box"> </div>          
                         <div id="count-item" class="p-2" > Hiện tại chưa tìm kiếm </div>  
@@ -131,7 +141,9 @@
                         <label for="quantity" class="CT"> Trang: </label>
                         <input type="number" id="quantity" name="quantity" min="0" max="0" oninput="scrollToTarget(this.value)">
                         <span class="chuthich" style="line-height: 1.6;"> ( Di chuyển đến dòng có chứa kí tự tìm kiếm có thể có một hoặc nhiều kí tự tìm kiếm trên 1 dòng )</span>
-        </div>        
+                        <div class="cttext"></div>
+                        
+                </div>        
                         </div>
 
 
@@ -149,7 +161,7 @@
                          <li class="nav-item" role="presentation"> 
                                  <button class="nav-link" id="CH-tab" data-bs-toggle="tab" data-bs-target="#CH"
                                         type="button" role="tab" aria-controls="CH"
-                                        aria-selected="false"> Câu hỏi </button> 
+                                        aria-selected="false"> Câu hỏi liên quan </button> 
                          </li> 
                  </ul> 
                  <div class="tab-content" id="myTabContent"> 
@@ -174,20 +186,370 @@
                         </div> 
                  <div class="tab-pane fade" id="KN" role="tabpanel" aria-labelledby="KN-tab">
                         <div class="ms-3 mt-3"> 
-                                <li > Chương 1 <a href="#dieu_1" class="font-monospace"> <br>  Điều 1: Phạm vi điều chỉnh </a></li>
 
 
+                                <div>
+                                <h4> Dạng luật </h4>
+                                <h6> Cách thức thể hiện của pháp luật </h6>
+                                <div class="ms-3">
+                                <div style="color: darkblue;">
+                                        <h5>Tiêu chí phân loại</h5>
+                                        <ul>
+                                                <a class="btn btn-primary mb-2" data-bs-toggle="collapse" href="#collapseExample0" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        Theo hình thức thể hiện
+                                                </a>
+                                                <div class="collapse" id="collapseExample0">
+                                                        <div class="card card-body border-0 m-2 ">
+                                                        <li>
+                                                                Văn bản pháp luật
+                                                        </li>
+                                                        <li>
+                                                                Tập quán pháp
+                                                        </li>
+                                                        <li>
+                                                                Hành vi pháp quyền
+                                                        </li>
+                                                </div>
+                                        </ul>
+                                        <ul>
+                                                <a class="btn btn-primary mb-2" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        Theo nguồn gốc
+                                                </a>
+                                                <div class="collapse" id="collapseExample1">
+                                                        <div class="card card-body border-0 m-2 ">
 
+                                                                <li>
+                                                                        Hiến pháp
+                                                                </li>
+                                                                <li>
+                                                                        Luật
+                                                                </li>
+                                                                <li>
+                                                                        Nghị định, thông tư
+                                                                </li>
+                                                </div>
+                                        </ul>
+                                        <ul>
+                                                <a class="btn btn-primary mb-2" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        Theo phạm vi điều chỉnh 
+                                                </a>
+                                                <div class="collapse" id="collapseExample2">
+                                                        <div class="card card-body border-0 m-2 ">
+                                                
+                                                        <li>
+                                                                Luật chung 
+                                                        </li>
+                                                        <li>
+                                                                Luật chuyên Ngành
+                                                        </li>
+                                                </div>
+                                        </ul>
+                                        <ul>
+                                                <a class="btn btn-primary mb-2" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                        Theo hiệu lực
+                                                </a>
+                                                <div class="collapse" id="collapseExample3">
+                                                        <div class="card card-body border-0 m-2">
 
+                                                        <li>
+                                                                Tối cao 
+                                                        </li>
+                                                        <li>
+                                                                Cao
+                                                        </li>
+                                                        <li>
+                                                                Trung bình, thấp
+                                                        </li>      
+                                                </div>                                          
+                                        </ul>
+                                </div>
+                                </div>    
 
+                                <h4 style="padding: 10px; border-radius: 5px; margin-top: 15px; text-align: center;"> Thông tin ở các chương </h4>
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 1</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title"> Quy định chung </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định các vấn đề chung về đất đai bao gồm: Chế độ sở hữu đất đai, người sử dụng đất, nguyên tắc sử dụng đất, người chịu trách nhiệm trước Nhà nước đối với việc sử dụng đất, khuyến khích đầu tư vào đất đai, phân loại đất, căn cứ để xác định loại đất, những hành vi bị nghiêm cấm.</p>
+                                        </div>
+                                </div>
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 2</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title">  Quyền và trách nhiệm của nhà nước đối với đất đai  </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về quyền hạn và trách nhiệm của Nhà nước trong việc đại diện chủ sở hữu toàn dân về đất đai và thống nhất quản lý về đất đai, bao gồm:Quy hoạch, kế hoạch sử dụng đất,Giao đất, cho thuê đất, thu hồi đất,Quản lý đất đai của Nhà nước,Quản lý tài sản công gắn liền với đất,Bồi thường, hỗ trợ, tái định cư khi Nhà nước thu hồi đất. </p>
+                                        </div>
+                                </div>
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 3</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title">  Địa giới hành chính và điều tra cơ bản về đất đai  </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về quyền và nghĩa vụ của người sử dụng đất, bao gồm: Quyền của người sử dụng đất,Nghĩa vụ của người sử dụng đất.</p>
+                                        </div>
+                                </div>
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 4</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title">  Quy hoạch, kế hoạch sử dụng đất </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về tổ chức bộ máy quản lý nhà nước về đất đai; nhiệm vụ, quyền hạn của cơ quan quản lý nhà nước về đất đai; trách nhiệm của tổ chức, cá nhân trong quản lý nhà nước về đất đai. </p>
+                                        </div>
+                                </div>                                
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 5</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title">  Giải quyết tranh chấp đất đai </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về nguyên tắc giải quyết tranh chấp đất đai; thẩm quyền giải quyết tranh chấp đất đai; trình tự, thủ tục giải quyết tranh chấp đất đai. </p>
+                                        </div>
+                                </div> 
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 6</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title"> Thu hồi đất, trưng dụng đất, bồi thường, hỗ trợ, tái định cư </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về nguyên tắc giải quyết khiếu nại, tố cáo về đất đai; thẩm quyền giải quyết khiếu nại, tố cáo về đất đai; trình tự, thủ tục giải quyết khiếu nại, tố cáo về đất đai.</p>
+                                        </div>
+                                </div>                                
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 7</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title"> Đăng kí đất đai, cấp giấy chứng nhận quyền sử dụng đất, quyền sỡ hữu nhà ở và tài sản khác gắn liền với đất </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về nguyên tắc xử lý vi phạm pháp luật về đất đai; các loại vi phạm pháp luật về đất đai; trách nhiệm của người có hành vi vi phạm pháp luật về đất đai; trình tự, thủ tục xử lý vi phạm pháp luật về đất đai.			</p>
+                                        </div>
+                                </div> 
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 8</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title"> Tài chính về đất đai, giá đất và đấu giá quyền sử dụng đất </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về việc sử dụng đất, quản lý đất đai đô thị, bao gồm:
+                                                Quy hoạch, kế hoạch sử dụng đất đô thị
+                                                Giao đất, cho thuê đất, thu hồi đất đô thị
+                                                Quản lý đất đai trong đô thị
+                                                Quản lý nhà ở đô thị
+                                                Quản lý hạ tầng kỹ thuật đô thị
+                                                Quản lý môi trường đô thị			</p>
+                                        </div>
+                                </div>
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 9</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title"> Hệ thống thông tin đất đai và cơ sỡ dữ liệu đất đai </h5>
+                                          <p class="card-text">  Luật Đất đai 2013 quy định về việc sử dụng đất, quản lý đất đai nông nghiệp, bao gồm:
 
+                                                Quy hoạch, kế hoạch sử dụng đất nông nghiệp
+                                                Giao đất, cho thuê đất, thu hồi đất nông nghiệp
+                                                Quản lý đất đai trong nông nghiệp
+                                                Quản lý rừng sản xuất
+                                                Quản lý rừng phòng hộ
+                                                Quản lý rừng đặc dụng
+                                                Quản lý đất nuôi trồng thủy sản
+                                                Quản lý đất làm muối
+                                        </p>
+                                        </div>
+                                </div>
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 10</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title"> Chế độ sử dụng các loại đất </h5>
+                                          <p class="card-text">  Luật Đất đai 2013 quy định về việc sử dụng đất, quản lý đất lâm nghiệp, bao gồm:
 
+                                                Quy hoạch, kế hoạch sử dụng đất lâm nghiệp
+                                                Giao đất, cho thuê đất, thu hồi đất lâm nghiệp
+                                                Quản lý đất đai trong lâm nghiệp
+                                                Quản lý rừng sản xuất
+                                                Quản lý rừng phòng hộ
+                                                Quản lý rừng đặc dụng	
+                                        </p>
+                                        </div>
+                                </div>
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 11</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title">Quyền và nghĩa vụ của người sử dụng đất</h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về việc sử dụng đất, quản lý đất chưa sử dụng, bao gồm:
 
+                                                Quy hoạch, kế hoạch sử dụng đất chưa sử dụng
+                                                Giao đất, cho thuê đất, thu hồi đất chưa sử dụng
+                                                Quản lý đất đai trong đất chưa sử dụng			
+                                        </p>
+                                        </div>
+                                </div>
+
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 12</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title"> Thủ tục hành chính về đất đai </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về việc kinh doanh bất động sản, bao gồm:
+
+                                                Quyền của tổ chức, cá nhân kinh doanh bất động sản
+                                                Nghĩa vụ của tổ chức, cá nhân kinh doanh bất động sản
+                                                Quy định về hợp đồng kinh doanh bất động sản
+                                                Quy định về quản lý hoạt động kinh doanh bất động sản		
+                                        </p>
+                                        </div>
+                                </div>
+
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 13</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title"> Giám sát, thanh tra, giải quyết tranh chấp, khiếu nại, tố cáo và xử lý vi phạm pháp luật về đất đai </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về hiệu lực thi hành của Luật Đất đai 2013.					
+                                        </p>
+                                        </div>
+                                </div>
+
+                                <div class="card">
+                                        <h5 class="card-header"> Chương 14</h5>
+                                        <div class="card-body">
+                                          <h5 class="card-title">  Điều khoản thi hành </h5>
+                                          <p class="card-text"> Luật Đất đai 2013 quy định về các quy định chuyển tiếp trong quá trình thực hiện Luật Đất đai 2013.								
+                                        </p>
+                                        </div>
+                                </div>
                         </div>
 
-                 </div>  
-                 <div class="tab-pane fade" id="CH" role="tabpanel" aria-labelledby="CH-tab"> </div> 
-                 </div> 
+                 </div>
+                </div>  
+                <div class="tab-pane fade" id="CH" role="tabpanel" aria-labelledby="CH-tab">
+                      
+                      <div class="card card-body">
+                          <h5 class="card-text fw-normal text-wrap p-2" style="font-size: medium;">Người sử dụng đất có được bồi thường chi phí san lấp mặt bằng khi Nhà nước thu hồi đất vì mục đích quốc phòng, an ninh không?</h5>
+                          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample0" role="button" aria-expanded="false" aria-controls="collapseExample1"> Trả lời </a>
+                                <div class="collapse" id="collapseExample0">
+                                        <div class="card card-body">
+                                        Việc bồi thường chi phí san lấp mặt bằng được quy định tại khoản 2 Điều 3 Nghị định 47/2014/NĐ-CP như sau:
+                                        <br> Bồi thường chi phí đầu tư vào đất còn lại khi Nhà nước thu hồi đất vì mục đích quốc phòng, an ninh; phát triển kinh tế - xã hội vì lợi ích quốc gia, công cộng
+                                        <br> 1. Đối tượng được bồi thường chi phí đầu tư vào đất còn lại khi Nhà nước thu hồi đất vì mục đích quốc phòng, an ninh; phát triển kinh tế - xã hội vì lợi ích quốc gia, công cộng là các trường hợp quy định tại Điều 76 của Luật Đất đai.
+                                        <br> 2. Chi phí đầu tư vào đất còn lại là các chi phí mà người sử dụng đất đã đầu tư vào đất phù hợp với mục đích sử dụng đất nhưng đến thời điểm cơ quan nhà nước có thẩm quyền quyết định thu hồi đất còn chưa thu hồi hết. Chi phí đầu tư vào đất còn lại gồm toàn bộ hoặc một phần của các khoản chi phí sau:
+                                        <br> a) Chi phí san lấp mặt bằng;
+                                        <br> b) Chi phí cải tạo làm tăng độ màu mỡ của đất, thau chua rửa mặn, chống xói mòn, xâm thực đối với đất sử dụng vào mục đích sản xuất nông nghiệp;
+                                        <br> c) Chi phí gia cố khả năng chịu lực chống rung, sụt lún đất đối với đất làm mặt bằng sản xuất kinh doanh;
+                                        <br> d) Chi phí khác có liên quan đã đầu tư vào đất phù hợp với mục đích sử dụng đất.
+                                        <br> ...
+                                        <br> Như đã phân tích ở trên, khi Nhà nước thu hồi đất vì mục đích quốc phòng, an ninh, mặc dù không được bồi thường về đất nhưng người sử dụng đất được Nhà nước cho thuê đất trả tiền thuê hàng năm vẫn được bồi thường chi phí đầu tư vào đất còn lại.
+                                        <br> Theo quy định trên thì trong chi phí đầu tư vào đất còn lại gồm có chi phí san lấp mặt bằng.
+                                        <br> Như vậy, đối chiếu với trường hợp của anh thì anh được Nhà nước bồi thường toàn bộ hoặc một phần của khoản chi phí san lấp mặt bằng.
+                                        </div>
+                                </div>
+                        </div> 
+                                       
+                        
+                        <div class="card card-body">
+                          <h5 class="card-text fw-normal text-wrap p-2" style="font-size: medium;">Người sử dụng đất được Nhà nước cho thuê đất trả tiền thuê hàng năm thì có được bồi thường về đất khi NN thu hồi vì mục đích quốc phòng, an ninh không?</h5>
+                          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1"> Trả lời </a>
+                                <div class="collapse" id="collapseExample1">
+                                        <div class="card card-body">
+                                                Việc bồi thường khi Nhà nước thu hồi đất vì mục đích quốc phòng, an ninh được quy định tại Điều 76 Luật đất đai 2013 như sau:
+
+                                                <br> Bồi thường chi phí đầu tư vào đất còn lại khi Nhà nước thu hồi đất vì mục đích quốc phòng, an ninh; phát triển kinh tế - xã hội vì lợi ích quốc gia, công cộng
+                                                <br> 1. Các trường hợp không được bồi thường về đất nhưng được bồi thường chi phí đầu tư vào đất còn lại khi Nhà nước thu hồi đất bao gồm:
+                                                <br> a) Đất được Nhà nước giao không thu tiền sử dụng đất, trừ trường hợp đất nông nghiệp được Nhà nước giao cho hộ gia đình, cá nhân quy định tại khoản 1 Điều 54 của Luật này;
+                                                <br> b) Đất được Nhà nước giao cho tổ chức thuộc trường hợp có thu tiền sử dụng đất nhưng được miễn tiền sử dụng đất;
+                                                <br> c) Đất được Nhà nước cho thuê trả tiền thuê đất hàng năm; đất thuê trả tiền thuê đất một lần cho cả thời gian thuê nhưng được miễn tiền thuê đất, trừ trường hợp hộ gia đình, cá nhân sử dụng đất thuê do thực hiện chính sách đối với người có công với cách mạng;
+                                                <br> d) Đất nông nghiệp thuộc quỹ đất công ích của xã, phường, thị trấn;
+                                                <br> đ) Đất nhận khoán để sản xuất nông lâm nghiệp, nuôi trồng thủy sản, làm muối.
+                                                <br> 2. Chính phủ quy định chi tiết Điều này.
+                                                <br> Như vậy, đối với trường hợp người sử dụng đất được Nhà nước cho thuê đất trả tiền hàng năm thì không được bồi thường về đất mà chỉ được bồi thường chi phí đầu tư vào đất còn lại khi Nhà nước thu hồi đất vì mục đích quốc phòng, an ninh.
+                                        </div>
+                                </div>
+                        </div> 
+
+                        <div class="card card-body">
+                          <h5 class="card-text fw-normal text-wrap p-2" style="font-size: medium;">Điều kiện xác định chi phí san lấp mặt bằng để được nhận hỗ trợ khi Nhà nước thu hồi đất là gì?</h5>
+                          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample1"> Trả lời </a>
+                                <div class="collapse" id="collapseExample2">
+                                        <div class="card card-body">
+                                                Điều kiện xác định chi phí san lấp mặt bằng để được nhận hỗ trợ được quy định tại khoản 3 Điều 3 Nghị định 47/2014/NĐ-CP như sau:
+
+                                                <br> Bồi thường chi phí đầu tư vào đất còn lại khi Nhà nước thu hồi đất vì mục đích quốc phòng, an ninh; phát triển kinh tế - xã hội vì lợi ích quốc gia, công cộng
+                                                <br> ...
+                                                <br> 3. Điều kiện xác định chi phí đầu tư vào đất còn lại:
+                                                <br> a) Có hồ sơ, chứng từ chứng minh đã đầu tư vào đất. Trường hợp chi phí đầu tư vào đất còn lại không có hồ sơ, chứng từ chứng minh thì Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương (sau đây gọi là Ủy ban nhân dân cấp tỉnh) căn cứ tình hình thực tế tại địa phương quy định việc xác định chi phí đầu tư vào đất còn lại;
+                                                <br> b) Chi phí đầu tư vào đất không có nguồn gốc từ ngân sách nhà nước.
+                                                <br> 4. Chi phí đầu tư vào đất còn lại được tính phải phù hợp với giá thị trường tại thời điểm có quyết định thu hồi đất và được xác định theo công thức sau:
+                                                <br> Điều kiện xác định chi phí san lấp mặt bằng để được nhận hỗ trợ khi Nhà nước thu hồi đất là gì?
+                                                <br> Trong đó:
+                                                <br> P: Chi phí đầu tư vào đất còn lại;
+                                                <br> P1: Chi phí san lấp mặt bằng;
+                                                <br> P2: Chi phí cải tạo làm tăng độ màu mỡ của đất, thau chua rửa mặn, chống xói mòn, xâm thực đối với đất sử dụng vào mục đích sản xuất nông nghiệp;
+                                                <br> ...
+                                                <br> Như vậy, theo quy định, điều kiện xác định chi phí san lấp mặt bằng để được nhận hỗ trợ khi Nhà nước thu hồi đất bao gồm:
+
+                                                <br> (1) Có hồ sơ, chứng từ chứng minh đã thực hiện việc san lấp mặt bằng.
+
+                                                <br> Trường hợp không có hồ sơ, chứng từ chứng minh thì Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương căn cứ tình hình thực tế tại địa phương quy định việc xác định chi phí;
+
+                                                <br> (2) Chi phí thực hiện việc san lấp mặt bằng không có nguồn gốc từ ngân sách nhà nước.
+                                        </div>
+                                </div>
+                        </div> 
+
+
+                        <div class="card card-body">
+                          <h5 class="card-text fw-normal text-wrap p-2" style="font-size: medium;">Mẫu đơn đăng ký cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất là mẫu nào?</h5>
+                          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample1"> Trả lời </a>
+                                <div class="collapse" id="collapseExample3">
+                                        <div class="card card-body">
+                                                Mẫu đơn đăng ký cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất được quy định tại khoản 2 Điều 12 Thông tư 24/2014/TT-BTNMT như sau:
+
+                                                <br> Mẫu giấy tờ thực hiện thủ tục đăng ký, cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất lần đầu
+                                                <br> ...
+                                                <br> 2. Mẫu giấy tờ thực hiện thủ tục đăng ký lần đầu gồm có:
+                                                <br> a) Đơn đăng ký, cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất: Mẫu số 04a/ĐK;
+                                                <br> b) Danh sách người sử dụng chung thửa đất, chủ sở hữu chung tài sản gắn liền với đất (kèm theo Đơn đăng ký, cấp Giấy chứng nhận): Mẫu số 04b/ĐK;
+                                                <br> c) Danh sách các thửa đất nông nghiệp của cùng một người sử dụng, người được quản lý (kèm theo Đơn đăng ký, cấp Giấy chứng nhận): Mẫu số 04c/ĐK;
+                                                <br> d) Danh sách tài sản gắn liền với đất trên cùng một thửa đất (kèm theo Đơn đăng ký, cấp Giấy chứng nhận): Mẫu số 04d/ĐK;
+                                                <br> ...
+                                                <br> Như vậy, mẫu đơn đăng ký lần đầu cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất được quy định theo Mẫu số 04a/ĐK ban hành kèm theo Thông tư 24/2014/TT-BTNMT (được sửa đổi bởi khoản 4 Điều 2 Thông tư 14/2023/TT-BTNMT).
+                                        </div>
+                                </div>
+                        </div> 
+
+                        <div class="card card-body">
+                          <h5 class="card-text fw-normal text-wrap p-2" style="font-size: medium;">Hướng dẫn cách ghi đơn đăng ký cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất?</h5>
+                          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample1"> Trả lời </a>
+                                <div class="collapse" id="collapseExample4">
+                                        <div class="card card-body">
+                                                Cách viết đơn đăng ký cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất được hướng dẫn tại Mẫu số 04a/ĐK ban hành kèm theo Thông tư 24/2014/TT-BTNMT (được sửa đổi bởi khoản 4 Điều 2 Thông tư 14/2023/TT-BTNMT) như sau:
+
+                                                <br> Mục (1) Địa chỉ thường trú: Cá nhân ghi họ tên, năm sinh, số CMND hoặc số CCCD hoặc số định danh cá nhân;
+                                                
+                                                <br> Hộ gia đình ghi chữ “Hộ ông” (hoặc “Hộ bà”), sau đó ghi họ tên, năm sinh, số CMND hoặc số CCCD hoặc số định danh cá nhân (nếu có) của hai vợ chồng chủ hộ (người có chung quyền sử dụng đất của hộ).
+                                                
+                                                <br> Tổ chức ghi tên và quyết định thành lập hoặc giấy đăng ký kinh doanh, giấy phép đầu tư (gồm tên và số, ngày ký, cơ quan ký văn bản).
+                                                
+                                                <br> Cá nhân nước ngoài và người Việt Nam định cư ở nước ngoài ghi họ tên, năm sinh, quốc tịch, số và ngày cấp, nơi cấp hộ chiếu.
+                                                <br> 
+                                                <br> Trường hợp nhiều chủ cùng sử dụng đất, cùng sở hữu tài sản thì kê khai tên các chủ đó vào danh sách kèm theo).
+                                                
+                                                <br> Mục (2) Thửa đất đăng ký: Trường hợp đăng ký nhiều thửa đất nông nghiệp mà không đề nghị cấp giấy hoặc đề nghị cấp chung một giấy chứng nhận nhiều thửa đất nông nghiệp thì tại dòng đầu của điểm 3 mục I chỉ ghi tổng số thửa và kê khai từng thửa vào danh sách kèm theo (Mẫu 04c/ĐK).
+                                                <br> Mục (3) Nguồn gốc sử dụng: Ghi cụ thể: được Nhà nước giao có thu tiền hay giao không thu tiền hay cho thuê trả tiền một lần hay thuê trả tiền hàng năm hoặc nguồn gốc khác.
+
+                                                <br> Mục (4) Loại nhà ở, công trình: Ghi cụ thể: Nhà ở riêng lẻ, căn hộ chung cư, văn phòng, nhà xưởng, nhà kho,…
+                                        
+                                        
+                                        </div>
+                                </div>
+                        </div> 
+
+                        <div class="card card-body">
+                          <h5 class="card-text fw-normal text-wrap p-2" style="font-size: medium;">Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất được cấp theo hình thức nào?</h5>
+                          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample1"> Trả lời </a>
+                                <div class="collapse" id="collapseExample5">
+                                        <div class="card card-body">
+                                                Nguyên tắc cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất được quy định tại Điều 98 Luật Đất đai 2013 như sau:
+
+                                                <br> Nguyên tắc cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất
+                                                <br> 1. Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất được cấp theo từng thửa đất. Trường hợp người sử dụng đất đang sử dụng nhiều thửa đất nông nghiệp tại cùng một xã, phường, thị trấn mà có yêu cầu thì được cấp một Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất chung cho các thửa đất đó.
+                                                <br> 2. Thửa đất có nhiều người chung quyền sử dụng đất, nhiều người sở hữu chung nhà ở, tài sản khác gắn liền với đất thì Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất phải ghi đầy đủ tên của những người có chung quyền sử dụng đất, người sở hữu chung nhà ở, tài sản khác gắn liền với đất và cấp cho mỗi người 01 Giấy chứng nhận; trường hợp các chủ sử dụng, chủ sở hữu có yêu cầu thì cấp chung một Giấy chứng nhận và trao cho người đại diện.
+                                                <br> ...
+                                                <br> Như vậy, theo quy định, Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất được cấp theo từng thửa đất.
+                                                
+                                                <br> Trường hợp người sử dụng đất đang sử dụng nhiều thửa đất nông nghiệp tại cùng một xã, phường, thị trấn mà có yêu cầu thì được cấp một Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất chung cho các thửa đất đó.                                        
+                                        </div>
+                                </div>
+                        </div> 
+
+
+                </div> 
 
          </ul> 
          <div class="WordSection1 VBPL"> 
@@ -3951,32 +4313,15 @@
 
 
          <script> 
-                /*function search() {
-                    var input, filter, paragraphs, p, i, txtValue;
-                    input = document.getElementById('search-input');
-                    filter = input.value.toUpperCase();
-                    paragraphs = document.querySelectorAll('p');
-        
-                    for (i = 0; i  < paragraphs.length; i++) {
-                        p = paragraphs[i];
-                        txtValue = p.textContent || p.innerText;
-        
-                        if (txtValue.toUpperCase().indexOf(filter) >  0) {
-                            p.classList.add('highlight'); // Add 'highlight' class to found paragraphs
-                        } else {
-                            p.classList.remove('highlight'); // Remove 'highlight' class from non-matching paragraphs
-                        }
-                    }
-        
-                }*/
-
+         
                 var quantity;
                 var vt = [];
                 function search() {
                         var input, filter, paragraphs, p, i, txtValue, countItem;
                         input = document.getElementById('search-input');
-                        countItem = document.getElementById('count-item');
+                        
                         filter = input.value.toLowerCase();
+                        countItem = document.getElementById('count-item');
                         var count = 0;
                         quantity = document.getElementById('quantity');
                         paragraphs = document.querySelectorAll('p');
@@ -3991,11 +4336,6 @@
                                         p.innerHTML = txtValue.replace(new RegExp(filter, 'gi'), function (match) {
                                                 return '<span class="highlight">' + match + '</span>';
                                         });
-                                       /* var position = p.offsetTop;
-                                        window.scrollTo({
-                                                top: position,
-                                                behavior: 'smooth'
-                                        }); */
                                 }
                                 else {
                                         removeHighlight(p)
@@ -4008,6 +4348,7 @@
                         else{
                                 countItem.innerHTML = "Số từ vừa tìm được: " + count.toString()+" từ.";
                                 quantity.max = count;
+                                return count;
                         }
 
                 }
@@ -4019,7 +4360,6 @@
                         });
                 }
                 function scrollToTarget(value) {
-                // Ensure the value is a number between 1 and 100
                 if(value == 0){
                         window.scrollTo({
                                 top: 0,
@@ -4027,7 +4367,6 @@
                         });  
                         return;                      
                 }
-                // Calculate the target position based on the value
                 const targetPosition = vt[quantity.value];
 
                 window.scrollTo({
@@ -4036,7 +4375,92 @@
                 });
         }
 
+        function processQuery() {
+                        // Lấy giá trị từ ô input
+                        var query = document.getElementById("search-input").value;
 
+                        var stopWords = [
+                                "gì",
+                                "có bao nhiêu?",
+                                "có bao nhiêu",
+                                "không",
+                                "những gì",
+                                "những gì?",
+                                "?",
+                                "là",
+                                "gì?",
+                                "không?",
+                                "như thế nào",
+                                "như thế nào?",
+
+                        ];
+
+                        var queryWords = query.split(" ").filter(function(word) {
+                                return !stopWords.includes(word.toLowerCase());
+                        });
+
+                        var processedQuery = queryWords.join(" ");
+                        return processedQuery;
+                }
+
+
+                function selectND(){
+                        var opition;
+                        opition = document.getElementById("selectOption");
+                        var selectValue = opition.value;
+                        if(selectValue === "option2"){
+                                var  processedQuery = processQuery();
+                                if(search1(processedQuery) == 0){
+                                        webLink = "https://www.google.com/search?q=" + processedQuery;
+                                        linkTag.setAttribute("href", webLink);
+                                        console.log(webLink);
+                                        linkTag.click();
+                                }
+
+                        }
+                        else if(selectValue === "option1"){
+                                search();
+                        }
+                }
+                
+                
+                
+                function search1(value) {
+                        var input, filter, paragraphs, p, i, txtValue, countItem;
+                        input = value;
+                        
+                        filter = input.toLowerCase();
+                        countItem = document.getElementById('count-item');
+                        var count = 0;
+                        quantity = document.getElementById('quantity');
+                        paragraphs = document.querySelectorAll('p');
+
+                        for (i = 0; i  < paragraphs.length; i++) {
+                                p = paragraphs[i];
+                                txtValue = p.textContent || p.innerText;
+
+                                if (txtValue.toLowerCase().indexOf(filter) > -1) { 
+                                        count = count + 1;
+                                        vt[count] = p.offsetTop;
+                                        p.innerHTML = txtValue.replace(new RegExp(filter, 'gi'), function (match) {
+                                                return '<span class="highlight">' + match + '</span>';
+                                        });
+                                }
+                                else {
+                                        removeHighlight(p)
+                                }
+                        }
+                        if(count != 0){
+                                countItem.innerHTML = "Số từ vừa tìm được: " + count.toString()+" từ.";
+                                quantity.max = count;
+                        }
+                        else{
+                                countItem.innerHTML = "Số từ vừa tìm được: " + count.toString()+" từ.";
+                                quantity.max = count;
+                                return count;
+                        }
+
+                }
          </script> 
          <script src="js/bootstrap.bundle.js">  </script> 
          <script src="js/jquery-3.7.1.js"> </script>
@@ -4048,8 +4472,81 @@
                         "Tư vấn pháp lý về đất đai",
                         "Thủ tục chuyển nhượng đất",
                         "Đồng sở hữu đất đai",
-
-
+                        "Quy định mới về đất đai theo Luật 2013",
+                        "Nội dung chi tiết về Bất động sản theo Luật 2013",
+                        "Hướng dẫn thực hiện quy định đất đai",
+                        "Tổng hợp điều khoản quy định Luật đất đai 2013",
+                        "Thông tin pháp lý về quản lý đất đai",
+                        "Luật Bất động sản và những thay đổi quan trọng",
+                        "Bản án liên quan đến Luật đất đai",
+                        "Luật đất đai và quyền sở hữu Bất động sản",
+                        "Cập nhật thay đổi về đất đai theo pháp luật mới",
+                        "Luật đất đai 2013: Những điểm chính cần biết",
+                        "Thực hiện đúng Luật đất đai để tránh vi phạm",
+                        "Điều chỉnh đất đai theo quy định của pháp luật",
+                        "Tìm hiểu về quy định Bất động sản mới nhất",
+                        "Luật đất đai và ảnh hưởng đến thị trường bất động sản",
+                        "Bảo vệ quyền lợi của bên sở hữu theo Luật 2013",
+                        "Luật đất đai và quy định về chuyển nhượng Bất động sản",
+                        "Luật đất đai: Điều chỉnh quy hoạch và sử dụng đất",
+                        "Nắm rõ về các vấn đề pháp lý Bất động sản",
+                        "Luật đất đai và các vấn đề tranh chấp liên quan",
+                        "Luật Bất động sản: Bảo vệ quyền và lợi ích của bên liên quan",
+                        "Thực hiện giao dịch Bất động sản theo quy định",
+                        "Tư vấn pháp lý về đất đai và Bất động sản",
+                        "Luật đất đai 2013 và thách thức cho người kinh doanh",
+                        "Quy định cụ thể về quản lý và sử dụng đất đai",
+                        "Luật đất đai và các biện pháp thi hành hiệu quả",
+                        "Luật đất đai Việt Nam",
+                        "Quy định về quản lý đất đai",
+                        "Văn bản pháp luật Bất động sản 2013",
+                        "Hướng dẫn thi hành Luật đất đai",
+                        "Chính sách đất đai năm 2013",
+                        "Các điều khoản quan trọng trong Luật Bất động sản",
+                        "Luật đất đai và pháp lý Bất động sản",
+                        "Thực hiện quy định Luật đất đai 2013",
+                        "Điều chỉnh quy hoạch đất đai theo Luật 2013",
+                        "Tác động của Luật đất đai đối với thị trường Bất động sản",
+                        "Bảo vệ quyền sử dụng đất theo Luật 2013",
+                        "Biểu đồ thay đổi về quản lý đất đai",
+                        "Các đối tượng được hưởng lợi từ Luật đất đai",
+                        "Quy định về chuyển nhượng quyền sử dụng đất",
+                        "Thủ tục và hồ sơ đăng ký đất đai",
+                        "Luật đất đai và phòng ngừa gian lận đất đai",
+                        "Tác động của Luật Bất động sản đến doanh nghiệp",
+                        "Những thay đổi quan trọng của Luật đất đai 2013",
+                        "Luật Bất động sản và quyền sở hữu đất đai",
+                        "Hệ thống quy định mới về đất đai",
+                        "Luật đất đai và pháp lý kinh doanh Bất động sản",
+                        "Bảo vệ môi trường theo quy định của Luật 2013",
+                        "Quy định về sử dụng đất đai cho mục đích công nghiệp",
+                        "Những điểm mới và thách thức từ Luật đất đai",
+                        "Luật đất đai và quy hoạch đô thị",
+                        "Quy định chi tiết về chuyển đổi mục đích sử dụng đất",
+                        "Phân loại đất và quy định của Luật 2013",
+                        "Luật đất đai và đầu tư Bất động sản",
+                        "Thủ tục giải quyết tranh chấp đất đai theo Luật 2013",
+                        "Tác động của Luật Bất động sản đến người dân",
+                        "Quy định về quy hoạch nông thôn theo Luật đất đai",
+                        "Luật đất đai và quyền lợi của người sử dụng đất",
+                        "Bảo vệ quyền lợi của người mua Bất động sản theo Luật 2013",
+                        "Điều chỉnh quy hoạch đất đai và phát triển kinh tế",
+                        "Luật Bất động sản và chính sách thuế đất",
+                        "Thủ tục cấp giấy chứng nhận quyền sử dụng đất",
+                        "Tác động của Luật đất đai đến thị trường nhà ở",
+                        "Quy định về bảo vệ môi trường trong Luật 2013",
+                        "Luật đất đai và quản lý tài nguyên đất",
+                        "Tư vấn pháp lý về Luật đất đai",
+                        "Thay đổi chính sách đất đai theo Luật 2013",
+                        "Luật đất đai và quy hoạch xây dựng",
+                        "Quy định về sử dụng đất đai cho mục đích dân cư",
+                        "Đánh giá ảnh hưởng của Luật Bất động sản đến doanh nghiệp",
+                        "Quy định về quản lý đất đai trong nông nghiệp",
+                        "Luật đất đai và quy hoạch phát triển kinh tế",
+                        "Thực hiện Luật Bất động sản để bảo vệ quyền lợi",
+                        "Quy định về sử dụng đất đai cho mục đích giáo dục",
+                        "Luật đất đai và quản lý đất công cộng",
+                        "Bảo vệ quyền lợi của người thuê đất theo Luật 2013",
                 ];
 
                 // getting all required elements
@@ -4105,6 +4602,10 @@
                         }
                         suggBox.innerHTML = listData;
                 }
+
+
+
+
             </script>
          </body> 
 
